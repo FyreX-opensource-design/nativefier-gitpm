@@ -1,5 +1,4 @@
 {
-  "system_only": true,
   "dependencies": {
     "system": {
       "arch_method": "sudo pacman -S --noconfirm",
