@@ -79,19 +79,32 @@ Repositories can include a `gitpm.json` file with dependency information:
   "dependencies": {
     "system": {
       "method": "sudo pacman -S --noconfirm",
-      "Arch": [
-        "distrobox",
-        ["docker", "podman"]
+      "check_commands": [
+        ["docker", "podman"],
+        "docker-compose",
+        "distrobox"
       ],
-      "Debian": [
-        "distrobox",
-        ["docker", "podman"]
-      ],
-      "Fedora_method": "sudo dnf install -y",
-      "Fedora": [
-        "distrobox",
-        ["docker", "podman"]
-      ]
+      "Arch": {
+        "docker": ["docker", "podman"],
+        "docker-compose": "docker-compose",
+        "distrobox": "distrobox"
+      },
+      "Debian": {
+        "docker": ["docker.io", "podman"],
+        "docker-compose": "docker-compose-plugin",
+        "distrobox": "distrobox"
+      },
+      "Ubuntu": {
+        "docker": "docker.io",
+        "docker-compose": "docker-compose-plugin",
+        "distrobox": "distrobox"
+      },
+      "Fedora": {
+        "docker": "docker",
+        "docker-compose": "docker-compose",
+        "distrobox": "distrobox"
+      },
+      "Fedora_method": "sudo dnf install -y"
     },
     "gitpm": [
       "https://github.com/user/dependency1.git",
