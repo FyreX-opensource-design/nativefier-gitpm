@@ -4,7 +4,7 @@
       "arch_method": "sudo pacman -S --noconfirm",
       "arch": [
         "nodejs",
-        "npm",
+        "npm"
       ]
   }
 }
